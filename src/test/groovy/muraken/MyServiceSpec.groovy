@@ -10,7 +10,7 @@ class MyServiceSpec extends Specification {
     target.setDao(new MyDaoImpl(true))
     
     when:
-    def actual = target.getUserName(1)
+    def actual = target.getUserName(0)
     
     then:
     actual.equals("muraken720")

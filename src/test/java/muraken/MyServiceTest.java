@@ -13,7 +13,9 @@ public class MyServiceTest {
     target.setDao(new MyDaoImpl(true));
     
     //exercise
-    String actual = target.getUserName(1);
+    //ここで、try-catchを書くか、メソッドにthrowsを書くかが必要になる。
+    //この例ではthrowsにしている。
+    String actual = target.getUserName(0);
     
     //verify
     assertThat(actual, is("muraken720"));

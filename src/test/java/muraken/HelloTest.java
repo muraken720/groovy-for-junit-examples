@@ -29,4 +29,21 @@ public class HelloTest {
     //verify
     fail();
   }
+
+  @Test
+  public void 例外メッセージを確認するテスト() {
+    //setup
+    Hello target = new Hello("");
+    
+    //exercise
+    try {
+      target.surprise();
+    }
+    catch(IllegalArgumentException e) {
+      String actual = e.getMessage();
+      
+      //verify
+      assertThat(actual, is("Wow!"));      
+    }    
+  }
 }

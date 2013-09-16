@@ -1,4 +1,4 @@
-package muraken;
+package muraken
 
 import org.junit.Test
 
@@ -25,5 +25,20 @@ class HelloGTest {
 
     //verify
     fail()
+  }
+
+  @Test
+  void "1.3 例外メッセージを確認するテスト"() {
+    //setup
+    def target = new Hello()
+
+    //exercise
+    try {
+      target.surprise()
+    }
+    catch(IllegalArgumentException e) {
+      //verify
+      assert e.message.equals("Wow!")
+    }
   }
 }

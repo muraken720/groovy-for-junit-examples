@@ -11,7 +11,8 @@ class MyServiceGTrest {
     target.setDao(new MyDaoImpl(true))
     
     //exercise
-    def actual = target.getUserName(1)
+    //groovyでは例外を気にする必要がないため、そのまま書ける。
+    def actual = target.getUserName(0)
     
     //verify
     assert actual.equals("muraken720")

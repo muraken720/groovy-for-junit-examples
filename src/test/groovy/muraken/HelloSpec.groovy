@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class HelloSpec extends Specification {
 
-  def "1.1 sayをテストする"() {
+  def "1.1 sayのテスト"() {
     setup:
     def target = new Hello("muraken720")
 
@@ -15,7 +15,18 @@ class HelloSpec extends Specification {
     "Hello! muraken720".equals(actual)
   }
 
-  def "1.2 例外送出をテストする"() {
+  def "1.2 surpriseのテスト"() {
+    setup:
+    def target = new Hello("muraken720")
+
+    when:
+    target.surprise()
+
+    then:
+    thrown(IllegalArgumentException)
+  }
+
+  def "1.3 例外メッセージを確認するテスト"() {
     setup:
     def target = new Hello("muraken720")
 
